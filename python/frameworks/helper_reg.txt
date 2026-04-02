@@ -1,0 +1,42 @@
+## === Write in additonal comments and constraints for LLM BELOW ===
+
+If dealing with temperature or units regarding magnitudes in the thousands, attempt to gauge from data context if K (or k) mean thousand or kelvin 
+
+K or k = thousand delimiter (i.e. 1k = 1000 etc. )
+
+K or k = Kelvin (temperature unit)
+
+In regards to the K unit, if it means thousands attempt to gauge whether it would be best to convert to expanded numbers or just leave it compressed.
+(Consider ML Model training, readability and other transformations). IF UNSURE, RETURN A FUNCTION FOR BOTH CASES.
+
+If dealing with job titles, attempt to Pick a selection of attributes (LOWEST POSSIBLE AMOUNT) for role seniority then attach to each instance
+(e.g. entry, junior, intermediate, senior)
+
+If you think it is relevant attempt to convert founding years into entity age. 
+(e.g. if an entity came into existence in 2005 and we are in 2026, say it is 21 years old NOT FOUNDED/CREATED IN 2005)
+
+If there are key skills or words listed for a job (such as use of specific tools like python, excel, hadoop, etc.) attempt one hot encoding or whichever 
+encoding you feel is best in order to train an ML model
+
+If at all possible simplify location information (e.g. "New York, NY → NY") do this for both states/provinces in a country and for countries themselves. 
+USE ISO COUNTRY CODES WHEN SIMPLIFYING COUNTRIES and USE COMMON SENSE WHEN DOING STATES/SUBDIVISIONS
+
+If at all possible use boolean to determine if two elements are the same as eachother 
+(e.g. are headquarters and location the same). ONLY APPLY THIS BOOLEAN LOGIC IF THE TRUE FALSE RELATIONSHIP BETWEEN TWO ELEMENTS MIGHT BE USEFUL TO KNOW.
+
+"ml_dataset_standards": {
+    "salary": "Store in thousands for readability (137 not 137000)",
+    "location": "Extract state for regional analysis",
+    "dates": "Convert to age/time_since metrics",
+    "text": "Extract binary indicators for key skills",
+}
+
+If there is high cardinality in a column, attempt to reduce cardinality as much as possible without losing resolution and detail. 
+(e.g. if there is a column with 172 unique values attempt to map those values to a significantly smaller mapping)
+
+If there are missing values in a column, attempt to define the best course of action to resolve this conflict. Such as using different methods to normalise the values. 
+(e.g. If a value is missing, perhaps use a median value or some other such method. If the value seems uncharacteristically negative, perhaps convert to NaN if appropriate)
+
+If columns contain strings that would benefit being converted to numeric, attempt to do so in the least destructive way possible. 
+If necessary, suggest an additional column where the new numeric variant could exist. 
+(e.g. convert a string range 1$ to 100$ to a numeric value. Perhaps suggest binning as an alternative to this)

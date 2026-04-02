@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slachtú</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+  <body>
+    <main class="container">
+
+        <!-- Home Page -->
+        <div id="page-home" class="page-enter">
+            <div class="logo-wrapper">
+                <img src="slachtu_logo.png" class="logo" alt="Slachtú logo"/>
+            </div>
+            <div class="button-wrapper">
+                <button onclick="showPage('pipeline')">Start</button>
+            </div>
+        </div>
+
+        <!-- Pipeline Page -->
+        <div id="page-pipeline" class="page-enter" style="display:none;">
+            <div class="pipeline-layout">
+
+                <!-- Tab Sidebar -->
+                <div class="tab-sidebar">
+                    <button class="tab-btn tab-active" onclick="showTab(0)">Set API Key & Provider</button>
+                    <button class="tab-btn" onclick="showTab(1)">Upload Data</button>
+                    <button class="tab-btn" onclick="showTab(2)">Generate Code</button>
+                    <button class="tab-btn" onclick="showTab(3)">Review Code</button>
+                    <button class="tab-btn" onclick="showTab(4)">Generate Tests</button>
+                    <button class="tab-btn" onclick="showTab(5)">Results</button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content">
+
+                    <!-- Tab 0: API Configuration -->
+                    <div id="tab-0" class="tab-panel">
+                        <div class="settings-panel">
+                            <h2>API Configuration</h2>
+                            <div class="settings-row">
+                                <label>Provider</label>
+                                <select id="provider">
+                                    <option value="cerebras">Cerebras</option>
+                                    <option value="openai">OpenAI</option>
+                                </select>
+                            </div>
+                            <div class="settings-row">
+                                <label>API Key</label>
+                                <input type="password" id="api-key" placeholder="Enter your API key"/>
+                            </div>
+                            <div class="settings-row">
+                                <label>Save API key?</label>
+                                <input type="checkbox" id="persist"/>
+                            </div>
+                            <button onclick="showTab(1)">Save & Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab 1: Upload Data -->
+                    <div id="tab-1" class="tab-panel" style="display:none;">
+                        <div class="settings-panel">
+                            <h2>Upload Data</h2>
+                            <div class="settings-row">
+                                <label>CSV Path</label>
+                                <input type="text" id="csv-path" placeholder="Paste full path to CSV..."/>
+                            </div>
+                            <p id="csv-status">No path entered</p>
+                            <button onclick="showTab(2)">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Generate Code -->
+                    <div id="tab-2" class="tab-panel" style="display:none;">
+                        <div class="settings-panel">
+                            <h2>Generate Code</h2>
+                            <button id="generate-btn" onclick="runPipeline()">Generate Code</button>
+                            <pre id="cleaning-code"></pre>
+                            <button onclick="showTab(3)">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Review Code -->
+                    <div id="tab-3" class="tab-panel" style="display:none;">
+                        <h2>Review Code</h2>
+
+                        <div id="review-container"></div>
+
+                        <div class="review-actions">
+                            <button onclick="applySelectedFunctions()">Apply Selected</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Generate Tests -->
+                    <div id="tab-4" class="tab-panel" style="display:none;">
+                        <h2>Generate Tests</h2>
+                    </div>
+
+                    <!-- Tab 5: Results -->
+                    <div id="tab-5" class="tab-panel" style="display:none;">
+                        <h2>Results</h2>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="button-wrapper">
+                <button onclick="showPage('home')">Back</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

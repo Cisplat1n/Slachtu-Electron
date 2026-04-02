@@ -1,0 +1,6 @@
+def {{function_name}}(df):
+    df_out = df.copy()
+    change_log = []
+
+
+    return df_out, change_log

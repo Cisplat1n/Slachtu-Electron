@@ -1,0 +1,30 @@
+#This txt serves as the template that will store the suggested code: 
+# DO NOT MODIFY THE TEXT IN THIS DOCUMENT OTHER THAN TO APPEND CODE TO IT
+#This test suite should have a logical flow and spaces + comments/docstrings to explain each piece of code
+
+#Rules:
+#You MUST NOT modify, delete, or reorder any existing text.
+#You MAY ONLY append new content to the end of the document.
+#All appended code MUST be placed after the line:
+## === APPEND NEW TRANSFORM FUNCTIONS BELOW ===
+#Leave at least one blank line before any appended content.
+#Preserve all existing comments and spacing exactly as-is.
+
+#Do NOT:
+#- Refactor existing code
+#- Rename variables defined earlier
+#- Inline transformations into existing functions
+#- Remove comments or docstrings
+#- Assume execution order
+
+#Formatting requirements:
+#Leave two blank lines between each appended function
+#Leave one blank line between comments and code
+#Do not remove existing blank lines
+
+#Appended content MUST consist only of standalone function definitions.
+#Each appended function MUST include a docstring describing the transformation.
+#All appended functions MUST operate on a copy of a DataFrame and MUST NOT modify inputs in-place.
+#Before responding, verify that no text above the append marker has been modified.
+
+# === APPEND NEW TRANSFORM FUNCTIONS BELOW ===
