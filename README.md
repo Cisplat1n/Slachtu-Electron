@@ -34,10 +34,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Slachtú</h3>
 
   <p align="center">
-    project_description
+    An LLM powered suggestion applicaton for data cleaning. It provides a nice GUI for interacting with AI returned text. Requires an API key. It generates a prompt based on editable .txt files and descriptive data stats, then returns non-desctructive python cleaning code. It is guidable based on a helper registry (helper_reg), where you can add additional information or facts to help the LLM drill down into the specifics.  
     <br />
     <a href="https://github.com/Cisplat1n/Slachtu-Electron"><strong>Explore the docs »</strong></a>
     <br />
