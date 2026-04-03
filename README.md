@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Cisplat1n/Slachtu-Electron">
-    <img src="logo/prototype_logo.png" alt="Logo" width="80" height="80">
+    <img src="logo/new_logo2.svg" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Slachtú</h3>
